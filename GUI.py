@@ -110,7 +110,7 @@ class GUI:
             A=np.pi*D**2/4;ac=np.pi*(D-2*t)**2/4;As=(A-ac)*(1-d/100)
             return [D/t,L/D,A,ac,As,As*fy/(ac*fc)]
         B,H,t,L,fc,fy=x["B"],x["H"],x["t"],x["L"],x["fc"],x["fy"]
-        A=B*H;ac=(B-2*t)*(H-2*t);As=A-ac
+        A=B*H;ac=(B-2*t)*(H-2*t);As=(A-ac)*(1-x["dov"]/100)
         return [H/B,B/t,H/t,L/B,L/H,A,ac,As,As*fy/(ac*fc)]
 
     def dataframe(self,x,d):
